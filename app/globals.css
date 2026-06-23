@@ -1,26 +1,69 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  /* Project design tokens */
+  --color-base:            #080809;
+  --color-surface:         #111114;
+  --color-elevated:        #18181c;
+  --color-subtle:          #1e1e23;
+
+  --color-border-default:  #2a2a30;
+  --color-border-subtle:   #3a3a42;
+
+  --color-text-primary:    #f0f0f4;
+  --color-text-secondary:  #c0c0cc;
+  --color-text-muted:      #808090;
+  --color-text-faint:      #505060;
+
+  --color-accent-primary:     #00c8d4;
+  --color-accent-primary-dim: rgba(0, 200, 212, 0.12);
+  --color-accent-ai:          #6457f9;
+  --color-accent-ai-text:     #8b82ff;
+
+  --color-state-error:    #ff4d4f;
+  --color-state-success:  #34d399;
+  --color-state-warning:  #fbbf24;
+
+  /* shadcn/ui semantic tokens — wired to project dark theme */
+  --color-background:        var(--color-base);
+  --color-foreground:        var(--color-text-primary);
+
+  --color-card:              var(--color-surface);
+  --color-card-foreground:   var(--color-text-primary);
+
+  --color-popover:           var(--color-elevated);
+  --color-popover-foreground:var(--color-text-primary);
+
+  --color-primary:           var(--color-accent-primary);
+  --color-primary-foreground:var(--color-base);
+
+  --color-secondary:         var(--color-subtle);
+  --color-secondary-foreground: var(--color-text-primary);
+
+  --color-muted:             var(--color-elevated);
+  --color-muted-foreground:  var(--color-text-muted);
+
+  --color-accent:            var(--color-subtle);
+  --color-accent-foreground: var(--color-text-primary);
+
+  --color-destructive:       var(--color-state-error);
+  --color-destructive-foreground: var(--color-text-primary);
+
+  --color-border:            var(--color-border-default);
+  --color-input:             var(--color-border-default);
+  --color-ring:              var(--color-accent-primary);
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  * {
+    border-color: var(--color-border-default);
   }
-}
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  body {
+    background-color: var(--color-base);
+    color: var(--color-text-primary);
+  }
 }
