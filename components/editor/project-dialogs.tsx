@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/dialog"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import type { UseProjectDialogsReturn } from "@/hooks/use-project-dialogs"
+import type { UseProjectActionsReturn } from "@/hooks/use-project-actions"
 
 export function ProjectDialogs({
   dialog,
@@ -23,7 +23,7 @@ export function ProjectDialogs({
   submitRename,
   submitDelete,
   slug,
-}: UseProjectDialogsReturn) {
+}: UseProjectActionsReturn) {
   const renameRef = useRef<HTMLInputElement>(null)
 
   useEffect(() => {
